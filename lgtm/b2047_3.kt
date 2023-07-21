@@ -1,20 +1,18 @@
 package lgtm
 
-import sts.da
-import kotlin.math.roundToInt
 
-fun log12(num: Double): Double = when {
-    num < 5 -> 2.5 - num
-    num >= 10-> num/2-1.5
-    else -> 2 - 1.5*(num - 3)*(num - 3)
+import kotlin.math.roundToLong
+
+fun log112(num:Double):Double{
+    return (num-32)/9
 }
 fun main(){
     var cs = 0
     var k = 0
     var e:Int =0
     val t = readln().toDouble()
-    var c = log12(t)
-    var d = (1000.0 * c).roundToInt() / 1000.0
+    var c = log112(t)
+    var d = (100000.0 * c*5).roundToLong() / 100000.0
     var dd = d.toString()
     var dc = dd.length
     while (cs < dc) {
@@ -25,12 +23,14 @@ fun main(){
         }
     }
     when(e){
-        1 -> {println(dd+"000")}
-        2 -> {println(dd+"00")}
-        3 -> {println(dd+"0")}
-        4 -> {println(dd)}
+        1 -> {println(dd+"00000")}
+        2 -> {println(dd+"0000")}
+        3 -> {println(dd+"000")}
+        4 -> {println(dd+"00")}
+        5 -> {println(dd+"0")}
+        6 -> {println(dd)}
     }
-    println("\n$d\n$e\n$c\n$t")
+//    println("\n$d\n$e\n$c\n$t")
 
 //    println("$dc \n$d")
 }
